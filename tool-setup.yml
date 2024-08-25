@@ -1,3 +1,4 @@
+#
 - name: Setup tool with Ansible
   hosts: all
   become: yes
