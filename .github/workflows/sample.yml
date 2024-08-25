@@ -2,7 +2,7 @@ name: provisioning Tools Infra
 on: [workflow_dispatch]
 jobs:
   provision:
-    runs-on: ubuntu-latest
+    runs-on: ec2
     steps:
       - uses: actions/checkout@v4
       - run: terraform init
