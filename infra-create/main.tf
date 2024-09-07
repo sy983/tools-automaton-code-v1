@@ -8,6 +8,14 @@ resource "aws_instance" "tool" {
   }
 }
 
+instance_market_options {
+  market_type = "spot"
+  spot_options {
+    instance_interruption_behavior = "stop"
+    spot_instance_type             = "persistent"
+  }
+}
+
 resource "aws_security_group" "tool-sg" {
   name        = "${var.name}-sg"
   description = "${var.name}-sg"
