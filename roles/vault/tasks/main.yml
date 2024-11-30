@@ -4,3 +4,19 @@
 
 - name: download vault repo file
   ansible.builtin.get.url:
+    url: https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
+    dest: /etc/yum.repos.d/hashicorp.repo
+
+- name: install vault
+  ansible.builtin.dnf:
+    name: vault
+    state: latest
+- name: restart vault service
+  ansible.builtin.systemd_service:
+    state: restarted
+    enabled: yes
+
+
+
+
+
