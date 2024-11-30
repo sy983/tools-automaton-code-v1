@@ -6,7 +6,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Run vault setup
-        run: ansible-playbook -i vault-internal.sydevops80.online, tool-setup.yml -e ansible_user={{ secrets.SSH_USER }} -e ansible_password={{ secrets.SSH_PASS }} -e tool_name=vault
+        run: ansible-playbook -i vault-internal.sydevops80.online, tool-setup.yml -e ansible_user=${{ secrets.SSH_USER }} -e ansible_password=${{ secrets.SSH_PASS }} -e tool_name=vault
+
 
         
 
