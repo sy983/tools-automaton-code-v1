@@ -31,13 +31,22 @@ resource "aws_security_group" "tool-sg" {
   }
 
  ingress {
-  from_port        = 22
-  to_port          = 22
-  protocol         = "tcp"
-  cidr_blocks      = ["0.0.0.0/0"]
+   from_port = 22
+   to_port   = 22
+   protocol  = "tcp"
+   cidr_blocks = ["0.0.0.0/0"]
+ }
 
-
-}
+ dynamic "ingress" {
+   for_each = var.ports
+   content {
+     from_port   = ingress.value
+     to_port     = ingress.value
+     protocol    = "TCP"
+     cidr_blocks = ["0.0.0.0/0"]
+     description = ingress.key
+    }
+  }
 
   tags = {
     Name = "${var.name}-sg"
