@@ -5,6 +5,7 @@ variable "tools" {
       policy_name = [
         "AdministratorAccess"
       ]
+      ports = {}
     }
     vault = {
       instance_type = "t3.small"
