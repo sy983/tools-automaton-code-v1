@@ -3,7 +3,7 @@
 #    msg: Hello
 
 - name: download vault repo file
-  ansible.builtin.get.url:
+  ansible.builtin.get_url:
     url: https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
     dest: /etc/yum.repos.d/hashicorp.repo
 
