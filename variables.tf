@@ -23,7 +23,7 @@ variable "tools" {
 #        kube = 8443
 #      }
 #      volume_size = 30
-#        }
+#       }
 
   }
 }
